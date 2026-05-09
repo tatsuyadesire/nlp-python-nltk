@@ -1,2 +1,20 @@
-# nlp-python-nltk
-Projeto acadêmico desenvolvido em Python utilizando a biblioteca NLTK para aplicação de técnicas básicas de Processamento de Linguagem Natural (NLP), incluindo tokenização, remoção de stopwords, stemming, lematização e POS Tagging no Visual Studio Code.
+# NLP com Python e NLTK
+
+Projeto desenvolvido para estudos na unidade de Processamento de Linguagem Natural do curso de Ciência de Dados.
+
+O projeto utiliza Python e a biblioteca NLTK para executar técnicas básicas de NLP (Natural Language Processing) diretamente no Visual Studio Code.
+
+## Funcionalidades
+
+- Segmentação em sentenças
+- Segmentação em palavras
+- Remoção de stopwords
+- Stemming
+- Lematização
+- POS Tagging (Marcação Morfossintática)
+
+## Tecnologias Utilizadas
+
+- Python
+- NLTK
+- Visual Studio Code
