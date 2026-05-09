@@ -1,8 +1,3 @@
-# ==========================================
-# PROCESSAMENTO DE LINGUAGEM NATURAL - NLP
-# UTILIZANDO NLTK NO VISUAL STUDIO CODE
-# ==========================================
-
 # IMPORTAÇÃO DAS BIBLIOTECAS
 
 import nltk
@@ -13,9 +8,7 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from nltk import pos_tag
 
-# ==========================================
-# DOWNLOAD DOS RECURSOS NECESSÁRIOS
-# ==========================================
+# DOWNLOAD DE RECURSOS
 
 nltk.download('punkt')
 nltk.download('punkt_tab')
@@ -27,40 +20,28 @@ nltk.download('averaged_perceptron_tagger_eng')
 
 nltk.download('wordnet')
 
-# ==========================================
-# TEXTO INFORMADO PELO USUÁRIO
-# ==========================================
+# INPUT - INSERIR TEXTO PARA PROCESSAMENTO 
 
 texto = input("Digite um texto para processamento NLP:\n")
 
-# ==========================================
 # SEGMENTAÇÃO EM SENTENÇAS
-# ==========================================
 
 sentencas = sent_tokenize(texto)
 
-print("\n===================================")
 print("SEGMENTAÇÃO EM SENTENÇAS")
-print("===================================")
 
 for i, sentenca in enumerate(sentencas, start=1):
     print(f"Sentença {i}: {sentenca}")
 
-# ==========================================
 # SEGMENTAÇÃO EM PALAVRAS
-# ==========================================
 
 palavras = word_tokenize(texto)
 
-print("\n===================================")
 print("SEGMENTAÇÃO EM PALAVRAS")
-print("===================================")
 
 print(palavras)
 
-# ==========================================
 # REMOÇÃO DE STOPWORDS E PONTUAÇÃO
-# ==========================================
 
 stop_words = set(stopwords.words('portuguese'))
 
@@ -76,15 +57,11 @@ for palavra in palavras:
     ):
         palavras_filtradas.append(palavra_lower)
 
-print("\n===================================")
 print("REMOÇÃO DE STOPWORDS")
-print("===================================")
 
 print(palavras_filtradas)
 
-# ==========================================
 # STEMMING
-# ==========================================
 
 stemmer = PorterStemmer()
 
@@ -94,15 +71,11 @@ for palavra in palavras_filtradas:
     radical = stemmer.stem(palavra)
     stemming.append(radical)
 
-print("\n===================================")
 print("STEMMING")
-print("===================================")
 
 print(stemming)
 
-# ==========================================
 # LEMATIZAÇÃO
-# ==========================================
 
 lemmatizer = WordNetLemmatizer()
 
@@ -112,29 +85,19 @@ for palavra in palavras_filtradas:
     lema = lemmatizer.lemmatize(palavra)
     lematizacao.append(lema)
 
-print("\n===================================")
 print("LEMATIZAÇÃO")
-print("===================================")
 
 print(lematizacao)
 
-# ==========================================
 # MARCAÇÃO MORFOSSINTÁTICA
-# ==========================================
 
 marcacao = pos_tag(palavras)
 
-print("\n===================================")
-print("MARCAÇÃO MORFOSSINTÁTICA (POS TAGGING)")
-print("===================================")
+print("POS TAGGING)")
 
 for palavra, classe in marcacao:
     print(f"{palavra} --> {classe}")
 
-# ==========================================
 # FINALIZAÇÃO
-# ==========================================
 
-print("\n===================================")
 print("PROCESSAMENTO FINALIZADO COM SUCESSO")
-print("===================================")
